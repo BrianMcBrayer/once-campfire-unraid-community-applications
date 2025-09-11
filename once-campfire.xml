@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Once Campfire</Name>
+  <Repository>ghcr.io/basecamp/once-campfire:latest</Repository>
+  <Registry>https://github.com/basecamp/once-campfire/pkgs/container/once-campfire</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/basecamp/once-campfire/issues</Support>
+  <Project>https://github.com/basecamp/once-campfire</Project>
+  <Overview>Campfire is a web-based chat application from Basecamp. It supports multiple rooms, direct messages, file attachments, search, notifications and bot integrations.</Overview>
+  <Category>Productivity:Communication</Category>
+  <Icon>https://avatars.githubusercontent.com/u/13131?v=4</Icon>
+  <WebUI>https://[IP]:[PORT:443]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/basecamp/once-campfire-unraid-community-applications/main/once-campfire.xml</TemplateURL>
+  <Config Name="Data Storage" Target="/rails/storage" Default="/mnt/user/appdata/once-campfire" Mode="rw" Description="Persistent application data" Type="Path" Display="always" Required="true" />
+  <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="HTTP port" Type="Port" Display="always" Required="true" />
+  <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS port" Type="Port" Display="always" Required="true" />
+  <Config Name="SECRET_KEY_BASE" Target="SECRET_KEY_BASE" Default="" Mode="" Description="Rails secret key base" Type="Variable" Display="always" Required="true" />
+  <Config Name="SSL_DOMAIN" Target="SSL_DOMAIN" Default="" Mode="" Description="Domain for automatic Let's Encrypt certificates" Type="Variable" Display="advanced" Required="false" />
+  <Config Name="DISABLE_SSL" Target="DISABLE_SSL" Default="" Mode="" Description="Set to 1 to disable HTTPS" Type="Variable" Display="advanced" Required="false" />
+  <Config Name="VAPID_PUBLIC_KEY" Target="VAPID_PUBLIC_KEY" Default="" Mode="" Description="Web Push public key" Type="Variable" Display="advanced" Required="false" />
+  <Config Name="VAPID_PRIVATE_KEY" Target="VAPID_PRIVATE_KEY" Default="" Mode="" Description="Web Push private key" Type="Variable" Display="advanced" Required="false" />
+  <Config Name="SENTRY_DSN" Target="SENTRY_DSN" Default="" Mode="" Description="Sentry DSN for error reporting" Type="Variable" Display="advanced" Required="false" />
+</Container>
